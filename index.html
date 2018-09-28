@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valuuttamuunnin</title>
+</head>
+<body>
+    <form name="currencyConverter" action="#">
+
+        Valuutta, jonka haluat muuntaa:
+        <select name="currency1">
+            <option value=1>Euro</option>
+            <option value=10.3208>Ruotsin kruunu</option>
+            <option value="78.9011">Venäjän rupla</option>
+            <option value=1.1707>Yhdysvaltain dollari</option>
+        </select>
+        <br>
+
+        Uusi valuutta:
+        <select name="currency2">
+            <option value=1>Euro</option>
+            <option value=10.3208>Ruotsin kruunu</option>
+            <option value="78.9011">Venäjän rupla</option>
+            <option value=1.1707>Yhdysvaltain dollari</option>
+        </select>
+        <br>
+
+        Muunnettava summa:
+        <input type="number" name="amount" min="0">
+        <input type="button" value="Muunna" onclick="printValue()">
+        <br>
+
+        Uusi arvo:
+
+        <script>
+            printValue();
+
+           function printValue() {
+                let amount = document.forms["currencyConverter"]["amount"].value;
+                let currency1 = document.forms["currencyConverter"]["currency1"].value;
+                let currency2 = document.forms["currencyConverter"]["currency2"].value;
+
+                let newValue = currency2 / currency1 * amount;
+               document.write(newValue);
+            }
+        </script>
+    </form>
+</body>
+</html>
