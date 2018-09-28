@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Valuuttamuunnin</title>
+    <script src="js/currency-converter.js" defer></script>
 </head>
 <body>
     <form name="currencyConverter" action="#">
@@ -29,21 +30,7 @@
         <input type="number" name="amount" min="0">
         <input type="button" value="Muunna" onclick="printValue()">
         <br>
-
-        Uusi arvo:
-
-        <script>
-            printValue();
-
-           function printValue() {
-                let amount = document.forms["currencyConverter"]["amount"].value;
-                let currency1 = document.forms["currencyConverter"]["currency1"].value;
-                let currency2 = document.forms["currencyConverter"]["currency2"].value;
-
-                let newValue = currency2 / currency1 * amount;
-               document.write(newValue);
-            }
-        </script>
+        
     </form>
 </body>
 </html>
