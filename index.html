@@ -3,36 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Valuuttamuunnin</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/currency-converter.js"></script>
 </head>
 <body>
 
+<div class="container">
+
 <form>
-        Valuutta, jonka haluat muuntaa:
-        <select id="currency1" onchange="printValue()">
+    <label for="exampleFormControlSelect1">Alkuperäinen valuutta:</label>
+        <select class="form-control" id="currency1" onchange="printValue()">
         <script>
             printCurrencies();
         </script>
         </select>
         <br>
 
-        Uusi valuutta:
-        <select id="currency2" onchange="printValue()">
+    <label for="exampleFormControlSelect1">Uusi valuutta:</label>
+        <select class="form-control" id="currency2" onchange="printValue()">
             <script>
                 printCurrencies();
             </script>
         </select>
         <br>
 
-        Muunnettava summa:
-        <input type="number" id="amount" min="0" onchange="printValue()"><br>
+    <label for="exampleFormControlSelect1">Määrä:</label>
+        <input type="number" class="form-control" id="amount" min="0" value="1" onchange="printValue()"><br>
 
-        <p id="newValue"><b></b></p>
-        <script>
-            printValue();
-        </script>
-        <br>
+        <h2 id="newValue">
+        </h2>
+    
 </form>
+
+</div>
 
 </body>
 </html>
