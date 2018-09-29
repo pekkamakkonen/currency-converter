@@ -4,10 +4,8 @@ var currencies = [
     [78.9011, "Venäjän rupla"],
     [1.1707, "Yhdysvaltain dollari"]
 ];
-console.log(currencies[0][1]);
 
 function printCurrencies() {
-
     for (let i = 0; i < currencies.length; i++) {
         var option = "<option value=" + (currencies[i][0]) + ">" + (currencies[i][1]) + "</option>";
         document.write(option);
@@ -15,10 +13,10 @@ function printCurrencies() {
 }
 
 function printValue() {
-    let amount = document.forms["currencyConverter"]["amount"].value;
-    let currency1 = document.forms["currencyConverter"]["currency1"].value;
-    let currency2 = document.forms["currencyConverter"]["currency2"].value;
-
+    let amount = document.getElementById("amount").value;
+    let currency1 = document.getElementById("currency1").value;
+    let currency2 = document.getElementById("currency2").value;
     let newValue = currency2 / currency1 * amount;
-    document.write(newValue);
+
+    document.getElementById("newValue").innerHTML = newValue.toFixed(2);
 }

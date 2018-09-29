@@ -6,10 +6,10 @@
     <script src="js/currency-converter.js"></script>
 </head>
 <body>
-    <form name="currencyConverter" action="#">
 
+<form>
         Valuutta, jonka haluat muuntaa:
-        <select name="currency1">
+        <select id="currency1" onchange="printValue()">
         <script>
             printCurrencies();
         </script>
@@ -17,7 +17,7 @@
         <br>
 
         Uusi valuutta:
-        <select name="currency2">
+        <select id="currency2" onchange="printValue()">
             <script>
                 printCurrencies();
             </script>
@@ -25,10 +25,14 @@
         <br>
 
         Muunnettava summa:
-        <input type="number" name="amount" min="0">
-        <input type="button" value="Muunna" onclick="printValue()">
-        <br>
+        <input type="number" id="amount" min="0" onchange="printValue()"><br>
 
-    </form>
+        <p id="newValue"><b></b></p>
+        <script>
+            printValue();
+        </script>
+        <br>
+</form>
+
 </body>
 </html>
